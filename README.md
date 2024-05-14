@@ -18,3 +18,6 @@ How are things when somebody is logged out
 NetflixGpt
 -search Bar
 -Movie suggestions
+
+#Login page
+common header component
