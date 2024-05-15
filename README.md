@@ -1,7 +1,11 @@
-#Netflix-ai
-
+#Netflix-ai-things done
 -create React app
 -configured tailwind css
+-Header
+-Routing of App
+-Login form
+-Sign up form
+-form validation and useRef Hook
 
 #features
 -/browse page(comes only after authentication )
