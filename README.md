@@ -6,6 +6,11 @@
 -Login form
 -Sign up form
 -form validation and useRef Hook
+-firebase setup
+-deploying our app to production
+-Authentication -sign up user account
+-Implement sign in user ApI
+-created redux store with userSlice
 
 #features
 -/browse page(comes only after authentication )
