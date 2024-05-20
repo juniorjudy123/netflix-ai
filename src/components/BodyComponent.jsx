@@ -8,7 +8,7 @@ import { addUser, removeUser } from "../utils/userSlice"
 import { useDispatch } from "react-redux"
 
 export const BodyComponent = () => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch() //Always use hook on the top of the component
 
 	const appRouter = createBrowserRouter([
 		{
@@ -24,10 +24,19 @@ export const BodyComponent = () => {
 	useEffect(() => {
 		onAuthStateChanged(auth, (user) => {
 			if (user) {
-				const { uid, email, displayName } = user
-				dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
+				//if user is signed in
+				const { uid, email, displayName, photoURL } = user
+				//update store
+				dispatch(
+					addUser({
+						uid: uid,
+						email: email,
+						displayName: displayName,
+						photoURL: photoURL,
+					})
+				)
 			} else {
-				// User is signed out
+				// if User is signed out
 				dispatch(removeUser())
 			}
 		})
