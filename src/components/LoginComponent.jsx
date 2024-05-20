@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase"
 
 import { addUser } from "../utils/userSlice"
 import { useDispatch } from "react-redux"
+import { USER_AVATAR, bgimg_URL } from "../utils/constants"
 
 const LoginComponent = () => {
 	const [isSignInForm, setIsSignInForm] = useState(true)
@@ -44,7 +45,7 @@ const LoginComponent = () => {
 
 					updateProfile(user, {
 						displayName: name.current.value,
-						photoURL: "https://avatars.githubusercontent.com/u/119035261?v=4",
+						photoURL: USER_AVATAR,
 					})
 						.then(() => {
 							const { uid, email, displayName, photoURL } = auth.currentUser
@@ -92,10 +93,7 @@ const LoginComponent = () => {
 		<div>
 			<HeaderComponent />
 			<div className="absolute">
-				<img
-					src="https://assets.nflxext.com/ffe/siteui/vlv3/ff5587c5-1052-47cf-974b-a97e3b4f0656/065df910-dec3-46ae-afa8-7ad2b52dce40/IN-en-20240506-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-					alt="bg-img"
-				/>
+				<img src={bgimg_URL} alt="bg-img" />
 			</div>
 
 			<form
