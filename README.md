@@ -11,6 +11,11 @@
 -Authentication -sign up user account
 -Implement sign in user ApI
 -created redux store with userSlice
+-implemented signOut
+-Update profile
+-Bugfix:sign up user displayName and profile picture update
+-Bugfix:if the user is not logged in redirect to login page and if the is user is logged in redirect to browse page even if login page is accessed
+-unsubscribed to OnAuth state change callback
 
 #features
 -/browse page(comes only after authentication )

@@ -10,7 +10,7 @@ const HeaderComponent = () => {
 	const user = useSelector((store) => store.user)
 	const dispatch = useDispatch()
 	useEffect(() => {
-		onAuthStateChanged(auth, (user) => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				//if user is signed in
 				const { uid, email, displayName, photoURL } = user
@@ -30,6 +30,8 @@ const HeaderComponent = () => {
 				navigate("/")
 			}
 		})
+		//unsubscribe when component unmounts
+		return () => unsubscribe()
 	}, [])
 
 	const handleSignOut = () => {
