@@ -19,6 +19,10 @@
 -Always add hardcoded values to constant file
 -Register TMdB Api and create an application and get access tokens
 -go to documentation and get data from now playing movies
+-move the API fetching to custom hook called the useNowPlayingMovies
+-designing the browse component
+:-video container(videobackground and video title) )
+-movielist container(movielists* n->cards*n)
 
 #features
 -/browse page(comes only after authentication )
