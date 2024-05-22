@@ -47,8 +47,8 @@ const HeaderComponent = () => {
 	}
 
 	return (
-		<div className=" absolute px-2 py-2 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between h-24">
-			<img className=" w-40 p-2" src={LOGO} alt="logo-img" />
+		<div className=" absolute px-4 py-2 bg-gradient-to-b from-black z-10 opacity-90 w-full flex justify-between h-24">
+			<img className=" w-40 pl-4 " src={LOGO} alt="logo-img" />
 
 			{user && (
 				<div className="flex p-2 m-2 ">

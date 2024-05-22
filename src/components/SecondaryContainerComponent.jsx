@@ -25,7 +25,7 @@ const SecondaryContainerComponent = () => {
 
 	return (
 		<div className=" bg-black">
-			<div className="relative z-20  -mt-80 pt-12 px-6">
+			<div className="relative z-20  -mt-[25%] pt-12 pl-6">
 				<MovieList
 					title={"Now Playing Movies"}
 					movies={movies?.nowPlayingMovies}
