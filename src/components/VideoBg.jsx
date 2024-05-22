@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { API_OPTIONS } from "../utils/constants"
+import { useDispatch, useSelector } from "react-redux"
+import { addTrailerVideos } from "../utils/moviesSlice"
 
 const VideoBg = ({ movieId }) => {
-	const [trailerId, setTrailerId] = useState(null)
+	const dispatch = useDispatch(null)
+	const trailerVideos = useSelector((store) => store.movies?.trailerVideos)
 	const getMovieVideos = async () => {
 		const data = await fetch(
 			"https://api.themoviedb.org/3/movie/823464/videos?language=en-US",
@@ -19,7 +22,7 @@ const VideoBg = ({ movieId }) => {
 			? filteredTrailers[0]
 			: json.results[0]
 		console.log("trailer", trailer)
-		setTrailerId(trailer.key)
+		dispatch(addTrailerVideos(trailer))
 	}
 
 	useEffect(() => {
@@ -31,7 +34,7 @@ const VideoBg = ({ movieId }) => {
 			<iframe
 				width="560"
 				height="315"
-				src={"https://www.youtube.com/embed/" + trailerId}
+				src={"https://www.youtube.com/embed/" + trailerVideos?.key}
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin"
