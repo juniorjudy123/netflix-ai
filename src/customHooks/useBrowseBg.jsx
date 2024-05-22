@@ -18,12 +18,12 @@ const useBrowseBg = (movieId) => {
 		const filteredTrailers = json.results.filter(
 			(video) => video.type === "Trailer"
 		)
-		console.log("filteredtrailers", filteredTrailers)
+
 		//if no filteredTrailers
 		const trailer = filteredTrailers.length
 			? filteredTrailers[0]
 			: json.results[0]
-		console.log("trailer", trailer)
+
 		dispatch(addTrailerVideos(trailer))
 	}
 

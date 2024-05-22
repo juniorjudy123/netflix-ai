@@ -28,7 +28,7 @@ const LoginComponent = () => {
 		//validate the form data using regex written in validation.jsx
 
 		const message = checkValidData(email.current.value, password.current.value)
-		console.log(message)
+
 		setErrorMessage(message)
 
 		if (message) return
@@ -62,8 +62,6 @@ const LoginComponent = () => {
 						.catch((error) => {
 							setErrorMessage(error.message)
 						})
-
-					console.log(user)
 				})
 				.catch((error) => {
 					const errorCode = error.code

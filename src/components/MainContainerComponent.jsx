@@ -9,7 +9,6 @@ const MainContainerComponent = () => {
 	if (!movies) return //early return
 
 	const MainMovie = movies[0]
-	console.log("MainMovie", MainMovie)
 
 	const { original_title, overview, id } = MainMovie
 
