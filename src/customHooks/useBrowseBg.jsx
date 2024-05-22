@@ -1,0 +1,35 @@
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { API_OPTIONS } from "../utils/constants"
+import { addTrailerVideos } from "../utils/moviesSlice"
+
+const useBrowseBg = (movieId) => {
+	const dispatch = useDispatch(null)
+
+	const getMovieVideos = async () => {
+		const data = await fetch(
+			"https://api.themoviedb.org/3/movie/" +
+				movieId +
+				"/videos?language=en-US",
+			API_OPTIONS
+		)
+		const json = await data.json()
+
+		const filteredTrailers = json.results.filter(
+			(video) => video.type === "Trailer"
+		)
+		console.log("filteredtrailers", filteredTrailers)
+		//if no filteredTrailers
+		const trailer = filteredTrailers.length
+			? filteredTrailers[0]
+			: json.results[0]
+		console.log("trailer", trailer)
+		dispatch(addTrailerVideos(trailer))
+	}
+
+	useEffect(() => {
+		getMovieVideos()
+	}, [])
+}
+
+export default useBrowseBg
