@@ -8,7 +8,7 @@ const MainContainerComponent = () => {
 
 	if (!movies) return //early return
 
-	const MainMovie = movies[0]
+	const MainMovie = movies[1]
 
 	const { original_title, overview, id } = MainMovie
 

@@ -23,6 +23,13 @@
 -designing the browse component
 :-video container(videobackground and video title) )
 -movielist container(movielists* n->cards*n)
+-custom Hook for Now playing movies
+-create movies slice
+-update store with movie data
+-planning for main container and secondary container
+-fetch Data for Trailer video
+-update store with Trailer video data
+-Embedded the youtube video and make it play auto
 
 #features
 -/browse page(comes only after authentication )

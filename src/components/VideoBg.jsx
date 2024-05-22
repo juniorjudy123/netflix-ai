@@ -1,3 +1,29 @@
+// import React from "react"
+// import { useSelector } from "react-redux"
+// import useBrowseBg from "../customHooks/useBrowseBg"
+
+// const VideoBg = ({ movieId }) => {
+// 	const trailerVideos = useSelector((store) => store.movies?.trailerVideos)
+// 	useBrowseBg(movieId)
+
+// 	return (
+// 		<div className="">
+// 			<iframe
+// 				className="w-screen aspect-video absolute"
+// 				src={
+// 					"https://www.youtube.com/embed/" +
+// 					trailerVideos?.key +
+// 					"?&autoplay=1&mute=1"
+// 				}
+// 				title="YouTube video player"
+// 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+// 				referrerpolicy="strict-origin-when-cross-origin"
+// 			></iframe>
+// 		</div>
+// 	)
+// }
+
+// export default VideoBg
 import React from "react"
 import { useSelector } from "react-redux"
 import useBrowseBg from "../customHooks/useBrowseBg"
@@ -7,18 +33,15 @@ const VideoBg = ({ movieId }) => {
 	useBrowseBg(movieId)
 
 	return (
-		<div>
+		<div className="relative">
 			<iframe
-				width="560"
-				height="315"
-				src={"https://www.youtube.com/embed/" + trailerVideos?.key}
+				className="w-full h-auto aspect-video"
+				src={`https://www.youtube.com/embed/${trailerVideos?.key}?autoplay=1&mute=1`}
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
+				referrerPolicy="strict-origin-when-cross-origin"
+				style={{ zIndex: -1 }}
 			></iframe>
-			<h1 className="font-bold text-4xl m-8 text-red-500">
-				Site under construction .Please login later
-			</h1>
 		</div>
 	)
 }

@@ -48,12 +48,12 @@ const HeaderComponent = () => {
 
 	return (
 		<div className=" absolute px-5 py-5 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between">
-			<img className=" w-40" src={LOGO} alt="logo-img" />
+			<img className=" w-40 p-2" src={LOGO} alt="logo-img" />
 
 			{user && (
 				<div className="flex p-2 m-2 ">
 					<img
-						className="w12 h-11 rounded-full m-2 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 "
+						className="w12 h-11 rounded-full m-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 "
 						alt="userLogo"
 						src={user.photoURL}
 					/>
@@ -61,7 +61,7 @@ const HeaderComponent = () => {
 					<button
 						type="button"
 						onClick={handleSignOut}
-						className="text-white m-2 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+						className="text-white m-1 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
 					>
 						Sign Out
 					</button>
