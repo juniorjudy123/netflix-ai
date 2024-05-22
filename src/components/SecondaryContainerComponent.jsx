@@ -24,16 +24,20 @@ const SecondaryContainerComponent = () => {
 	const movies = useSelector((store) => store.movies)
 
 	return (
-		<div className="relative z-20  mt-50">
-			{/* Ensure higher z-index and margin to avoid overlap */}
-			<MovieList
-				title={"Now Playing Movies"}
-				movies={movies?.nowPlayingMovies}
-			/>
-			<MovieList title={"Trending Movies"} movies={movies?.nowPlayingMovies} />
-			<MovieList title={"Popular Movies"} movies={movies?.nowPlayingMovies} />
-			<MovieList title={"Horror Movies"} movies={movies?.nowPlayingMovies} />
-			<MovieList title={"Action Movies"} movies={movies?.nowPlayingMovies} />
+		<div className=" bg-black">
+			<div className="relative z-20  -mt-80 pt-12 px-6">
+				<MovieList
+					title={"Now Playing Movies"}
+					movies={movies?.nowPlayingMovies}
+				/>
+				<MovieList
+					title={"Trending Movies"}
+					movies={movies?.nowPlayingMovies}
+				/>
+				<MovieList title={"Popular Movies"} movies={movies?.nowPlayingMovies} />
+				<MovieList title={"Horror Movies"} movies={movies?.nowPlayingMovies} />
+				<MovieList title={"Action Movies"} movies={movies?.nowPlayingMovies} />
+			</div>
 		</div>
 	)
 }

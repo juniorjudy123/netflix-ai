@@ -47,7 +47,7 @@ const HeaderComponent = () => {
 	}
 
 	return (
-		<div className=" absolute px-5 py-5 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between">
+		<div className=" absolute px-2 py-2 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between h-24">
 			<img className=" w-40 p-2" src={LOGO} alt="logo-img" />
 
 			{user && (
@@ -61,7 +61,7 @@ const HeaderComponent = () => {
 					<button
 						type="button"
 						onClick={handleSignOut}
-						className="text-white m-1 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+						className="text-white m-1 bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2 text-center "
 					>
 						Sign Out
 					</button>
