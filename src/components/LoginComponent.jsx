@@ -149,20 +149,20 @@ const LoginComponent = () => {
 								: "Already registered user.Sign In Now"}
 						</p> */}
 						{isSignInForm ? (
-							<p className="text-white py-2 cursor-pointer">
+							<p className="text-white py-2 ">
 								New to Netflix?{" "}
 								<span
-									className="underline text-blue-500"
+									className=" text-white font-bold hover:underline cursor-pointer"
 									onClick={toggleSignInForm}
 								>
 									Sign Up Now
 								</span>
 							</p>
 						) : (
-							<p className="text-white py-2 cursor-pointer ">
+							<p className="text-white py-2 ">
 								Already registered user?{" "}
 								<span
-									className="underline text-blue-500"
+									className="text-white hover:underline font-bold cursor-pointer"
 									onClick={toggleSignInForm}
 								>
 									Sign In
@@ -175,7 +175,7 @@ const LoginComponent = () => {
 								This page is protected by Google reCAPTCHA to ensure you're not
 								a bot.{" "}
 								<span
-									className="text-blue-400  py-2 cursor-pointer"
+									className="text-blue-400  py-2 cursor-pointer hover:underline"
 									onClick={toggeExpand}
 								>
 									Learn more.
