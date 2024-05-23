@@ -30,6 +30,12 @@
 -fetch Data for Trailer video
 -update store with Trailer video data
 -Embedded the youtube video and make it play auto
+-Tailwind Classes to make Main container look awesome
+Build secondary component
+-Builded movie list
+-build Movie Card
+-TmDB Image CDN URL
+-Made browse page amazing using Tailwind
 
 #features
 -/browse page(comes only after authentication )

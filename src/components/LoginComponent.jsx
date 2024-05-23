@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux"
 import { USER_AVATAR, bgimg_URL } from "../utils/constants"
 
 const LoginComponent = () => {
+	const [isExpanded, setIsExpanded] = useState(false)
 	const [isSignInForm, setIsSignInForm] = useState(true)
 	const [errormessage, setErrorMessage] = useState(null)
 	const dispatch = useDispatch()
@@ -23,6 +24,10 @@ const LoginComponent = () => {
 	const toggleSignInForm = () => {
 		setIsSignInForm(!isSignInForm)
 	}
+
+	const toggeExpand = () => {
+		setIsExpanded(!isExpanded)
+	} //expanding the learn more button in login page
 
 	const handleButtonClick = () => {
 		//validate the form data using regex written in validation.jsx
@@ -136,23 +141,58 @@ const LoginComponent = () => {
 					</p>
 
 					<div>
-						<p
-							className="text-gray-400 py-2 cursor-pointer "
-							onClick={toggleSignInForm}
-						>
+						{/* <p
+							className="text-white py-2 cursor-pointer "
+							onClick={toggleSignInForm}>
 							{isSignInForm
 								? "New to Netflix? Sign Up Now"
 								: "Already registered user.Sign In Now"}
-						</p>
+						</p> */}
+						{isSignInForm ? (
+							<p className="text-white py-2 cursor-pointer">
+								New to Netflix?{" "}
+								<span
+									className="underline text-blue-500"
+									onClick={toggleSignInForm}
+								>
+									Sign Up Now
+								</span>
+							</p>
+						) : (
+							<p className="text-white py-2 cursor-pointer ">
+								Already registered user?{" "}
+								<span
+									className="underline text-blue-500"
+									onClick={toggleSignInForm}
+								>
+									Sign In
+								</span>
+							</p>
+						)}
+
 						<div className="py-2 ">
 							<p className="text-sm  text-gray-400">
 								This page is protected by Google reCAPTCHA to ensure you're not
-								a bot.
-								<a href="https://www.example.com" className=" text-blue-500">
-									{" "}
-									Learn more .
-								</a>
+								a bot.{" "}
+								<span
+									className="text-blue-400  py-2 cursor-pointer"
+									onClick={toggeExpand}
+								>
+									Learn more.
+								</span>
 							</p>
+
+							{isExpanded && (
+								<div className="mt-2 text-gray-400 text-sm">
+									<p>
+										The information collected by Google reCAPTCHA is subject to
+										the Google Privacy Policy and Terms of Service, and is used
+										for providing, maintaining, and improving the reCAPTCHA
+										service and for general security purposes (it is not used
+										for personalised advertising by Google).
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
