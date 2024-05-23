@@ -47,13 +47,17 @@ const HeaderComponent = () => {
 	}
 
 	return (
-		<div className=" absolute px-4 py-2 bg-gradient-to-b from-black z-10 opacity-90 w-full flex justify-between h-24">
+		<div className=" absolute px-4 py-2 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between h-24">
+			{/* // <div className="absolute top-0 left-0 w-full z-10 bg-opacity-50 bg-black  flex justify-between "> */}
 			<img className=" w-40 pl-4 " src={LOGO} alt="logo-img" />
 
 			{user && (
 				<div className="flex p-2 m-2 ">
+					<button className="py-2 px-2 m-1 mx-20 bg-purple-300 rounded-lg">
+						GPT search
+					</button>
 					<img
-						className="w12 h-11 rounded-full m-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 "
+						className="w12 h-11 rounded-full m-1  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 "
 						alt="userLogo"
 						src={user.photoURL}
 					/>
