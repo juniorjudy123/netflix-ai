@@ -4,7 +4,7 @@ import { API_OPTIONS } from "../utils/constants"
 import { addTrailerVideos } from "../utils/moviesSlice"
 
 const useBrowseBg = (movieId) => {
-	const dispatch = useDispatch(null)
+	const dispatch = useDispatch()
 
 	const getMovieVideos = async () => {
 		const data = await fetch(
@@ -21,7 +21,7 @@ const useBrowseBg = (movieId) => {
 
 		//if no filteredTrailers
 		const trailer = filteredTrailers.length
-			? filteredTrailers[2]
+			? filteredTrailers[1]
 			: json.results[0]
 
 		dispatch(addTrailerVideos(trailer))
