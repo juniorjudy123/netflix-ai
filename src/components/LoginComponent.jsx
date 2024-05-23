@@ -100,7 +100,7 @@ const LoginComponent = () => {
 			</div>
 
 			<form
-				className="absolute p-5 bg-black w-3/12 my-12 text-white mx-auto right-0 left-0  rounded-lg bg-opacity-85 shadow-xl"
+				className="absolute p-5 bg-black w-3/12 my-16 text-white mx-auto right-0 left-0  rounded-lg bg-opacity-85 shadow-xl"
 				onSubmit={(e) => e.preventDefault()}
 			>
 				<div className=" p-15 m-8">
@@ -131,7 +131,7 @@ const LoginComponent = () => {
 					></input>
 
 					<button
-						className="p-3 my-4 bg-red-600 w-full rounded-lg"
+						className="p-3 my-6 bg-red-600 w-full rounded-lg"
 						onClick={handleButtonClick}
 					>
 						{isSignInForm ? "Sign In" : "Sign Up"}
@@ -193,6 +193,11 @@ const LoginComponent = () => {
 									</p>
 								</div>
 							)}
+							<div>
+								<p className="text-sm font-bold font-serif text-gray-400 pt-3">
+									@Powered by GPT
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
