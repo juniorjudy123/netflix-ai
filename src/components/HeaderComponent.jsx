@@ -60,7 +60,7 @@ const HeaderComponent = () => {
 			{user && (
 				<div className="flex p-2 m-2 ">
 					<button
-						className="py-2 px-2 m-1 mx-20 bg-purple-300 rounded-lg"
+						className="py-2 px-2 m-1 mx-20 animate-bounce rounded-lg bg-opacity-50 shadow-lg text-white font-medium bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-gradient-to-br   shadow-purple-200/50 dark:shadow-lg dark:shadow--800/80"
 						onClick={handleGptSearchClick}
 					>
 						GPT search
