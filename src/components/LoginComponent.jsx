@@ -171,7 +171,7 @@ const LoginComponent = () => {
 						)}
 
 						<div className="py-2 ">
-							<p className="text-sm  text-gray-400">
+							<p className="text-sm text-gray-400 font-normal">
 								This page is protected by Google reCAPTCHA to ensure you're not
 								a bot.{" "}
 								<span
@@ -194,7 +194,7 @@ const LoginComponent = () => {
 								</div>
 							)}
 							<div>
-								<p className="text-sm font-bold font-serif text-gray-400 pt-3">
+								<p className="text-sm font-semibold font-serif text-gray-400 pt-3 ">
 									@Powered by GPT
 								</p>
 							</div>

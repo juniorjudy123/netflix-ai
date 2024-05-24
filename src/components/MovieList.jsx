@@ -2,7 +2,7 @@ import React from "react"
 import MovieCard from "./MovieCard"
 
 const MovieList = ({ title, movies }) => {
-	console.log("MovieList:", movies)
+	// console.log("MovieList:", movies)
 	return (
 		movies && (
 			<div className="p-2 ">
