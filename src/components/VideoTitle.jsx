@@ -20,6 +20,8 @@
 
 // export default VideoTitle
 import React from "react"
+import { IoIosPlay } from "react-icons/io"
+import { FaInfo } from "react-icons/fa6"
 
 function VideoTitle({ title, overview }) {
 	return (
@@ -27,11 +29,12 @@ function VideoTitle({ title, overview }) {
 			<h1 className="font-bold text-4xl w-1/4">{title}</h1>
 			<p className="text-lg py-6 w-1/4">{overview}</p>
 			<div>
-				<button className="bg-white hover:bg-opacity-70 text-black font-semibold p-2 px-10 rounded-lg text-xl">
-					▶️ Play
+				<button className="bg-white hover:bg-opacity-70 text-black font-semibold p-2 px-10 rounded-lg text-xl ">
+					<IoIosPlay /> Play
 				</button>
 				<button className="bg-gray-600 hover:bg-opacity-70 mx-2 text-black font-semibold p-2 px-10 rounded-lg text-xl">
-					❕ More Info
+					<FaInfo />
+					More Info
 				</button>
 			</div>
 		</div>
