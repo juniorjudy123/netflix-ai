@@ -36,6 +36,11 @@ Build secondary component
 -build Movie Card
 -TmDB Image CDN URL
 -Made browse page amazing using Tailwind
+-usePopularMovies custom hook
+-Gpt searchPage
+-Gpt searchbar
+[*]Multi language feature in app
+-integrate gpt API s
 
 #features
 -/browse page(comes only after authentication )

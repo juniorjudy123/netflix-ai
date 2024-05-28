@@ -20,6 +20,7 @@ const BrowseComponent = () => {
 	return (
 		<div>
 			<HeaderComponent />
+
 			{showGptSearch ? (
 				<GptsearchPageComponent />
 			) : (

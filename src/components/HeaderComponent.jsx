@@ -4,12 +4,16 @@ import { auth } from "../utils/firebase"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { addUser, removeUser } from "../utils/userSlice"
-import { LOGO } from "../utils/constants"
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants"
 import { toggeGptSearchView } from "../utils/gptSlice"
+import lang from "../utils/languageConstants"
+import { changeLanguage } from "../utils/configSlice"
 
 const HeaderComponent = () => {
 	const navigate = useNavigate()
 	const user = useSelector((store) => store.user)
+	const showGptSearch = useSelector((store) => store.gpt.showGptSearch)
+
 	const dispatch = useDispatch()
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -51,6 +55,9 @@ const HeaderComponent = () => {
 		//Toggle functionality
 		dispatch(toggeGptSearchView())
 	}
+	const handleLanguageChange = (e) => {
+		dispatch(changeLanguage(e.target.value))
+	}
 
 	return (
 		<div className=" absolute px-4 py-2 bg-gradient-to-b from-black z-10 opacity-85 w-full flex justify-between h-24">
@@ -58,12 +65,26 @@ const HeaderComponent = () => {
 			<img className=" w-40 pl-4 " src={LOGO} alt="logo-img" />
 
 			{user && (
-				<div className="flex p-2 m-2 ">
+				<div className="flex p-2">
+					{showGptSearch && (
+						<select
+							className="p-2 m-2 bg-gray-900 text-white rounded-sm "
+							onChange={handleLanguageChange}
+						>
+							{SUPPORTED_LANGUAGES.map((lang) => (
+								<option key={lang.identifier} value={lang.identifier}>
+									{lang.name}
+								</option>
+							))}
+						</select>
+					)}
 					<button
-						className="py-2 px-2 m-1 mx-20 animate-bounce rounded-lg bg-opacity-50 shadow-lg text-white font-medium bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 hover:bg-gradient-to-br   shadow-purple-200/50 dark:shadow-lg dark:shadow--800/80"
+						className={`py-2 px-2 m-1 mx-20 rounded-lg bg-opacity-50 shadow-lg text-white font-medium bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:bg-gradient-to-br shadow-purple-300/50 dark:shadow-lg dark:shadow--800/80 ${
+							!showGptSearch ? "animate-bounce" : ""
+						}`}
 						onClick={handleGptSearchClick}
 					>
-						GPT search
+						{showGptSearch ? "HomePage" : "GPT search"}
 					</button>
 					<img
 						className="w12 h-11 rounded-full m-1  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 "
